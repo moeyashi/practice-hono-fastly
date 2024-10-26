@@ -1,11 +1,11 @@
 # This file describes a Fastly Compute@Edge package. To learn more visit:
 # https://developer.fastly.com/reference/fastly-toml/
 
-name = "Hono"
+name = "practice-hono-fastly"
 authors = [""]
 description = ""
 language = "javascript"
-manifest_version = 2
+manifest_version = 3
 service_id = ""
 
 [scripts]
