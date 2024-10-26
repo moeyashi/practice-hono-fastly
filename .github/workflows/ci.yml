@@ -47,6 +47,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Set up Fastly CLI
+        uses: fastly/compute-actions/setup@v9
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
