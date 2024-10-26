@@ -80,7 +80,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Set up Fastly CLI
-        uses: fastly/compute-actions@v9
+        uses: fastly/compute-actions@v8
         with:
           service_id: ${{ secrets.FASTLY_SERVICE_ID }}
         env:
