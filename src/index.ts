@@ -7,3 +7,5 @@ app.get("/", (c) => {
 });
 
 app.fire();
+
+export default app;
