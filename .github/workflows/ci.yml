@@ -26,8 +26,7 @@ jobs:
         run: pnpm install
       - name: Run lint
         run: pnpm lint
-
-  build:
+  e2e:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,5 +41,5 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: Run build
-        run: pnpm build
+      - name: e2e
+        run: pnpm e2e

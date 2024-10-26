@@ -2,14 +2,17 @@
   "name": "practice-hono-fastly",
   "type": "module",
   "scripts": {
-    "lint": "biome check ./src",
+    "lint": "biome check ./src ./e2e",
+    "test": "echo No Test",
     "dev": "fastly compute serve --watch",
     "prebuild": "tsc",
     "build": "js-compute-runtime build/index.js bin/main.wasm",
-    "deploy": "fastly compute publish"
+    "deploy": "fastly compute publish",
+    "e2e": "node --test ./e2e/*"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@fastly/compute-testing": "^0.1.3",
     "typescript": "^5.6.3"
   },
   "dependencies": {
