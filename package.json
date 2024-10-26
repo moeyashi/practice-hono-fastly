@@ -1,13 +1,14 @@
 {
   "name": "practice-hono-fastly",
+  "type": "module",
   "scripts": {
     "dev": "fastly compute serve --watch",
-    "prebuild": "node ./build.js",
-    "build": "js-compute-runtime bin/index.js bin/main.wasm",
+    "prebuild": "tsc",
+    "build": "js-compute-runtime build/index.js build/main.wasm",
     "deploy": "fastly compute publish"
   },
   "devDependencies": {
-    "esbuild": "^0.21.4"
+    "typescript": "^5.6.3"
   },
   "dependencies": {
     "@fastly/js-compute": "3.7.0",
