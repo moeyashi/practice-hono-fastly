@@ -71,5 +71,6 @@ jobs:
       - name: Set up Fastly CLI
         uses: fastly/compute-actions@v9
         with:
-          token: ${{ secrets.FASTLY_API_KEY }}
           service_id: ${{ secrets.FASTLY_SERVICE_ID }}
+        env:
+          FASTLY_API_TOKEN: ${{ secrets.FASTLY_API_TOKEN }}
