@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -62,3 +62,14 @@ jobs:
         run: pnpm install
       - name: e2e
         run: pnpm e2e
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [lint, test, e2e]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Fastly CLI
+        uses: fastly/compute-actions@v9
+        with:
+          token: ${{ secrets.FASTLY_API_KEY }}
+          service_id: ${{ secrets.FASTLY_SERVICE_ID }}
